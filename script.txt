@@ -1,0 +1,495 @@
+1. git config --global user.name "Ahmed" && git config --global user.email "sa267641@gmail.com"
+2. git config --global --list
+3. done
+4. ls and git init
+5.touch login & touch signup 
+6. git switch -c SA/login and git switch -c SA/signup
+7.
+
+termina;l 1 
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ touch login 
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ touch signup
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git branch -c SA/login
+fatal: no commit on branch 'master' yet
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git switch -c SA/login
+Switched to a new branch 'SA/login'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git switch -c SA/signup
+Switched to a new branch 'SA/signup'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ touch signup.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch SA/signup
+fatal: invalid reference: SA/signup
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch SA/login
+fatal: invalid reference: SA/login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch master
+fatal: invalid reference: master
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ touch addinfo.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git commit -m"signup information included "
+[SA/signup (root-commit) 36c1a85] signup information included
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 addinfo.py
+ create mode 100644 login
+ create mode 100644 signup
+ create mode 100644 signup.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch login
+fatal: invalid reference: login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch SA/login
+fatal: invalid reference: SA/login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch -c  SA/login
+Switched to a new branch 'SA/login'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git merge SA/signup
+Already up to date.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git switch SA/signup
+Switched to branch 'SA/signup'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git merge SA/signup
+Already up to date.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git commit -m"all edit done in sa/sign and merge doen login "
+On branch SA/signup
+nothing to commit, working tree clean
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git push
+fatal: The current branch SA/signup has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin SA/signup
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git push --set-upstream origin SA/signup
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 240 bytes | 120.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/SASagorAhmed/-project_meta.git
+ * [new branch]      SA/signup -> SA/signup
+branch 'SA/signup' set up to track 'origin/SA/signup'.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git push SA/signup
+fatal: 'SA/signup' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch login
+fatal: invalid reference: login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch SA/login
+Switched to branch 'SA/login'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git push --delete SA/signup
+fatal: --delete doesn't make sense without any refs
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git push origin --delete SA/signup
+To https://github.com/SASagorAhmed/-project_meta.git
+ ! [remote rejected] SA/signup (refusing to delete the current branch: refs/heads/SA/signup)   
+error: failed to push some refs to 'https://github.com/SASagorAhmed/-project_meta.git'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git branch -d SA/signup
+Deleted branch SA/signup (was 36c1a85).
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git push origin --delete SA/signup
+To https://github.com/SASagorAhmed/-project_meta.git
+ ! [remote rejected] SA/signup (refusing to delete the current branch: refs/heads/SA/signup)   
+error: failed to push some refs to 'https://github.com/SASagorAhmed/-project_meta.git'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git push origin SA/login
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'SA/login' on GitHub by visiting:
+remote:      https://github.com/SASagorAhmed/-project_meta/pull/new/SA/login
+remote:
+To https://github.com/SASagorAhmed/-project_meta.git
+ * [new branch]      SA/login -> SA/login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git switch -c master
+Switched to a new branch 'master'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git pull origin main
+fatal: couldn't find remote ref main
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git pull origin master
+fatal: couldn't find remote ref master
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git pull
+Your configuration specifies to merge with the ref 'refs/heads/master'
+from the remote, but no such ref was fetched.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git merge SA/login 
+Already up to date.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/SASagorAhmed/-project_meta/pull/new/master
+remote:
+To https://github.com/SASagorAhmed/-project_meta.git
+ * [new branch]      master -> master
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git pull
+Already up to date.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git switch SA/signin
+fatal: invalid reference: SA/signin
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git switch -c  SA/signin
+Switched to a new branch 'SA/signin'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signin)
+$ git push origin --delete SA/signup
+To https://github.com/SASagorAhmed/-project_meta.git
+ ! [remote rejected] SA/signup (refusing to delete the current branch: refs/heads/SA/signup)   
+error: failed to push some refs to 'https://github.com/SASagorAhmed/-project_meta.git'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signin)
+$ git switch master
+A       text.txt
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git push origin --delete SA/signup
+To https://github.com/SASagorAhmed/-project_meta.git
+ ! [remote rejected] SA/signup (refusing to delete the current branch: refs/heads/SA/signup)   
+error: failed to push some refs to 'https://github.com/SASagorAhmed/-project_meta.git'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git push
+Everything up-to-date
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git push origin --delete SA/signup
+To https://github.com/SASagorAhmed/-project_meta.git
+ ! [remote rejected] SA/signup (refusing to delete the current branch: refs/heads/SA/signup)   
+error: failed to push some refs to 'https://github.com/SASagorAhmed/-project_meta.git'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git switch SA/signup
+A       text.txt
+branch 'SA/signup' set up to track 'origin/SA/signup'.
+Switched to a new branch 'SA/signup'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git pull
+Already up to date.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git push origin --delete SA/login
+To https://github.com/SASagorAhmed/-project_meta.git
+ - [deleted]         SA/login
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$
+
+
+
+
+terminal 2: 
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/login)
+$ git switch 
+fatal: missing branch or commit argument
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch SA/signup
+A       text.txt
+Already on 'SA/signup'
+Your branch is up to date with 'origin/SA/signup'.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git status
+On branch SA/signup
+Your branch is up to date with 'origin/SA/signup'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   text.txt
+
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/signup)
+$ git switch -c SA/payment
+Switched to a new branch 'SA/payment'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git config --global --list
+user.name=Sagor
+user.email=sa267641@gmail.com
+pager.log=false
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git --no--pager --oneline
+unknown option: --no--pager
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]        
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git --no-pager --oneline
+unknown option: --oneline
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]        
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git --no-pager log  --oneline
+36c1a85 (HEAD -> SA/payment, origin/master, origin/SA/signup, origin/HEAD, master, SA/signup, SA/signin, SA/login) signup information included
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git status
+On branch SA/payment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   text.txt
+
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ ls
+addinfo.py  login  signup  signup.py  text.txt
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git add addinfo.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git commit -m"merge conflic start "
+[SA/payment 0976309] merge conflic start
+ 2 files changed, 425 insertions(+)
+ create mode 100644 text.txt
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/payment)
+$ git switch master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git merge SA/payment
+Updating 36c1a85..0976309
+error: Your local changes to the following files would be overwritten by merge:
+        addinfo.py
+Please commit your changes or stash them before you merge.
+Aborting
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git add addinfo.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git commti -m "master commit for conflict "
+git: 'commti' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git commit -m "master commit for conflict "
+[master e32f826] master commit for conflict
+ 1 file changed, 1 insertion(+)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git merge SA/payment
+Auto-merging addinfo.py
+CONFLICT (content): Merge conflict in addinfo.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master|MERGING)
+$ git add addinfo.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master|MERGING)
+$ git commit -m "master commit for conflict solved "
+[master 3a9bcf0] master commit for conflict solved
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$
+
+terminal 3:
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ gti switch -c SA/order
+bash: gti: command not found
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (master)
+$ git switch -c SA/order
+Switched to a new branch 'SA/order'
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ touch order.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit"orders fiel added "
+git: 'commitorders fiel added ' is not a git command. See 'git --help'.
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit "orders fiel added "
+error: pathspec 'orders fiel added ' did not match any file(s) known to git
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit -m  "orders fiel added "
+[SA/order 513f2fc] orders fiel added
+ 2 files changed, 424 deletions(-)
+ create mode 100644 order.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add SA/order
+fatal: pathspec 'SA/order' did not match any files
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add order.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit -m"order 1 added "
+[SA/order b5adb0b] order 1 added
+ 1 file changed, 1 insertion(+)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add order.py
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit -m"order 2 added "
+[SA/order fda33bc] order 2 added
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git reset HEAD~2
+Unstaged changes after reset:
+M       order.py
+M       text.txt
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$  git --no-pager log 
+commit 513f2fc6ecc146c6bafb63af6108deac1534dac3 (HEAD -> SA/order)
+Author: Sagor <sa267641@gmail.com>
+Date:   Sun May 10 09:57:24 2026 +0600
+
+    orders fiel added
+
+commit 3a9bcf0346430e1b798db59f85eb2a41fff35fb0 (master)
+Merge: e32f826 0976309
+Author: Sagor <sa267641@gmail.com>
+Date:   Sun May 10 09:54:38 2026 +0600
+
+    master commit for conflict solved
+
+commit e32f826277ad584c403c89d0d4757978f7602f04
+Author: Sagor <sa267641@gmail.com>
+Date:   Sun May 10 09:53:44 2026 +0600
+
+    master commit for conflict
+
+commit 0976309942d20bc724d3fc72d13fd3dfe8cfa7a8 (SA/payment)
+Author: Sagor <sa267641@gmail.com>
+Date:   Sun May 10 09:51:23 2026 +0600
+
+    merge conflic start
+
+commit 36c1a8536a620a92d640a4ab6880c4e43f27089c (origin/master, origin/SA/signup, origin/HEAD, SA/signup, SA/signin, SA/login)
+Author: Sagor <sa267641@gmail.com>
+Date:   Sun May 10 09:24:31 2026 +0600
+
+    signup information included
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git add .
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$ git commit -m"undo changes "
+[SA/order b0c6d29] undo changes
+ 1 file changed, 3 insertions(+)
+
+sasag@Sagor-Mim MINGW64 /d/-project_meta (SA/order)
+$
